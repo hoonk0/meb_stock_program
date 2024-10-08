@@ -28,23 +28,23 @@ class Home extends StatelessWidget {
               ),
             ),
             ExpansionTile(
-              title: const Text('ECU'),
+              title: const Text('팀1'),
               children: [
                 ListTile(
-                  title: const Text('HKMC'),
+                  title: const Text('OE1'),
                   onTap: () {
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => Hkmc()));
                   },
                 ),
                 ListTile(
-                  title: const Text('STLA'),
+                  title: const Text('OE2'),
                   onTap: () {
                     Navigator.pop(context);
                   },
                 ),
                 ListTile(
-                  title: const Text('MMC'),
+                  title: const Text('OE3'),
                   onTap: () {
                     Navigator.pop(context);
                   },
@@ -58,28 +58,28 @@ class Home extends StatelessWidget {
               ],
             ),
             ExpansionTile(
-              title: const Text('HU'),
+              title: const Text('팀2'),
               children: [
                 ListTile(
-                  title: const Text('Text4'),
+                  title: const Text('OE1'),
                   onTap: () {
                     Navigator.pop(context);
                   },
                 ),
                 ListTile(
-                  title: const Text('Text5'),
+                  title: const Text('OE2'),
                   onTap: () {
                     Navigator.pop(context);
                   },
                 ),
                 ListTile(
-                  title: const Text('Text6'),
+                  title: const Text('OE3'),
                   onTap: () {
                     Navigator.pop(context);
                   },
                 ),
                 ListTile(
-                  title: const Text('Text7'),
+                  title: const Text('ETC'),
                   onTap: () {
                     Navigator.pop(context);
                   },

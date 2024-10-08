@@ -10,7 +10,7 @@ class ManagerStock extends StatefulWidget {
 class _ManagerStockState extends State<ManagerStock> {
   // 데이터 리스트
   List<List<String>> _data = [
-    ['버전0', 'esc사양0', 'mcu0', 'lva0', 'evp0', '재고 있음'],
+    ['버전0', '사양0', 'a', 'b', 'a', '30ea'],
   ];
 
   void _addRow() {
@@ -61,18 +61,19 @@ class _ManagerStockState extends State<ManagerStock> {
                     Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('재고량'))),
                   ],
                 ),
-                TableRow(
-                  decoration: BoxDecoration(color: Colors.white),
-                  children: const [
-                    Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('버전1'))),
-                    Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('사양1'))),
-                    Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('spec a'))),
-                    Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('spec b'))),
-                    Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('spec c'))),
-                    Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('30ea'))),
-                  ],
-                ),
+
                 // 데이터 행 추가
+                for (var row in _data)
+                  TableRow(
+                    children: row.map((cell) {
+                      return Center(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(cell),
+                        ),
+                      );
+                    }).toList(),
+                  ),
                 for (var row in _data)
                   TableRow(
                     children: row.map((cell) {
