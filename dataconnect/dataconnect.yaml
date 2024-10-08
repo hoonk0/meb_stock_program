@@ -1,0 +1,12 @@
+specVersion: "v1beta"
+serviceId: "meb_stock_program"
+location: "us-central1"
+schema:
+  source: "./schema"
+  datasource:
+    postgresql:
+      database: "fdcdb"
+      cloudSql:
+        instanceId: "meb_stock_program-fdc"
+      # schemaValidation: "COMPATIBLE"
+connectorDirs: ["./connector"]
