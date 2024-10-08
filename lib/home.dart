@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:meb_stock_program/manager_sample_history.dart';
 import 'package:meb_stock_program/sample_history.dart';
 
 import 'hkmc.dart';
+import 'manager_stock.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -18,7 +20,7 @@ class Home extends StatelessWidget {
           children: [
             const DrawerHeader(
               decoration: BoxDecoration(
-                color: Colors.blue,
+                color: Colors.grey,
               ),
               child: Text(
                 '메뉴',
@@ -93,6 +95,25 @@ class Home extends StatelessWidget {
             ExpansionTile(
               title: const Text('공지사항'),
             ),
+            ExpansionTile(
+              title: const Text('관리자 페이지'),
+              children: [
+                ListTile(
+                  title: const Text('재고입력'),
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => ManagerStock()));
+                  },
+                ),
+                ListTile(
+                  title: const Text('샘플 신청 현황'),
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => ManagerSampleHistory()));
+                  },
+                ),
+              ],
+            ),
           ],
         ),
       ),
@@ -113,8 +134,12 @@ class Home extends StatelessWidget {
                                   builder: (context) => SampleHistory()));
                 },
                 child: Container(
-                    color: Colors.transparent,
-                    child: Text('샘플이력 상세보기')),
+                    child: Text('샘플이력 상세보기', textAlign: TextAlign.center,),
+                decoration: BoxDecoration(
+                 borderRadius: BorderRadius.circular(8.0),
+                border: Border.all(color: Colors.black26)
+                ),),
+
               ),
               SizedBox(
                 height: 30,
@@ -129,7 +154,7 @@ class Home extends StatelessWidget {
                     width: 2.0, // 테두리 두께
                   ),
                 ),
-                child: const Text('현황 날짜 사양 수량 정리해서 나오게 표로 표시'),
+                child: const Text('현황 날짜 사양 수량 정리해서 나오게 표로 표시', textAlign: TextAlign.center,),
               ),
             ],
           ),

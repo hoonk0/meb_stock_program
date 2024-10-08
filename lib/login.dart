@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:meb_stock_program/join.dart';
+import 'package:meb_stock_program/tecbox.dart';
 
 import 'home.dart';
 
@@ -13,66 +15,72 @@ class Login extends StatelessWidget {
       appBar: AppBar(
         title: const Text('로그인'),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          const Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Text('사번 입력'),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Container(
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.grey), // 컨테이너 테두리 설정
-                borderRadius: BorderRadius.circular(8.0),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: TextField(
-                  controller: tecNumber, // tecNumber 연결
-                  decoration: const InputDecoration(
-                    border: InputBorder.none, // 내부 텍스트 필드의 기본 테두리 제거
-                    hintText: '사번을 입력하세요', // 힌트 텍스트 추가
+      body: Padding(
+        padding: const EdgeInsets.all(16.0), // 전체 Padding을 설정
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            TecBox(tec: tecNumber, title: '사번 입력', hint: '사번을 입력하세요'),
+
+            const SizedBox(height: 16.0),
+
+            /// 버튼 구현
+            Row(
+              children: [
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => Join()),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.grey, // 버튼 배경색 지정
+                      padding: const EdgeInsets.symmetric(vertical: 8.0),
+                      textStyle: const TextStyle(fontSize: 18),
+                    ),
+                    child: const Text('회원가입', style: TextStyle(color: Colors.white)),
                   ),
                 ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => Home()),
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue, // 버튼 배경색 지정
-                padding: const EdgeInsets.symmetric(vertical: 16.0),
-                textStyle: const TextStyle(fontSize: 18),
-              ),
-              child: const Text('로그인', style: TextStyle(color: Colors.white),),
-            ),
-          ),
 
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: ElevatedButton(
+                SizedBox(
+                  width: 10,
+                ),
+
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => Home()),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.grey, // 버튼 배경색 지정
+                      padding: const EdgeInsets.symmetric(vertical: 8.0),
+                      textStyle: const TextStyle(fontSize: 18),
+                    ),
+                    child: const Text('로그인', style: TextStyle(color: Colors.white)),
+                  ),
+                ),
+              ],
+            ),
+
+            const SizedBox(height: 8.0), // 두 번째 버튼과 간격 추가
+            ElevatedButton(
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(builder: (context) => Home()),
                 );
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue, // 버튼 배경색 지정
-                padding: const EdgeInsets.symmetric(vertical: 16.0),
+                backgroundColor: Colors.blueGrey, // 버튼 배경색 지정
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
                 textStyle: const TextStyle(fontSize: 18),
               ),
-              child: const Text('관리자 계정', style: TextStyle(color: Colors.white),),
+              child: const Text('관리자 계정', style: TextStyle(color: Colors.white)),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
