@@ -1,1 +1,56 @@
-{"flutter":{"platforms":{"android":{"default":{"projectId":"meb-stock-program","appId":"1:857087533390:android:c026dfaffa38b8cf63fe1f","fileOutput":"android/app/google-services.json"}},"ios":{"default":{"projectId":"meb-stock-program","appId":"1:857087533390:ios:646e9010b80be56163fe1f","uploadDebugSymbols":false,"fileOutput":"ios/Runner/GoogleService-Info.plist"}},"macos":{"default":{"projectId":"meb-stock-program","appId":"1:857087533390:ios:646e9010b80be56163fe1f","uploadDebugSymbols":false,"fileOutput":"macos/Runner/GoogleService-Info.plist"}},"dart":{"lib/firebase_options.dart":{"projectId":"meb-stock-program","configurations":{"android":"1:857087533390:android:c026dfaffa38b8cf63fe1f","ios":"1:857087533390:ios:646e9010b80be56163fe1f","macos":"1:857087533390:ios:646e9010b80be56163fe1f","web":"1:857087533390:web:f1daccf85a13215163fe1f","windows":"1:857087533390:web:e554c2f650870b1063fe1f"}}}}}}
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "meb-stock-program",
+          "appId": "1:857087533390:android:c026dfaffa38b8cf63fe1f",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "ios": {
+        "default": {
+          "projectId": "meb-stock-program",
+          "appId": "1:857087533390:ios:646e9010b80be56163fe1f",
+          "uploadDebugSymbols": false,
+          "fileOutput": "ios/Runner/GoogleService-Info.plist"
+        }
+      },
+      "macos": {
+        "default": {
+          "projectId": "meb-stock-program",
+          "appId": "1:857087533390:ios:646e9010b80be56163fe1f",
+          "uploadDebugSymbols": false,
+          "fileOutput": "macos/Runner/GoogleService-Info.plist"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "meb-stock-program",
+          "configurations": {
+            "android": "1:857087533390:android:c026dfaffa38b8cf63fe1f",
+            "ios": "1:857087533390:ios:646e9010b80be56163fe1f",
+            "macos": "1:857087533390:ios:646e9010b80be56163fe1f",
+            "web": "1:857087533390:web:f1daccf85a13215163fe1f",
+            "windows": "1:857087533390:web:e554c2f650870b1063fe1f"
+          }
+        }
+      }
+    }
+  },
+  "hosting": {
+    "site": "mebstock",
+    "public": "build/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
