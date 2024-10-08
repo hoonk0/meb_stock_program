@@ -24,6 +24,7 @@ class ManagerSampleHistory extends StatelessWidget {
             4: FlexColumnWidth(),
             5: FlexColumnWidth(),
             6: FlexColumnWidth(),
+            7: FlexColumnWidth(),
           },
           children: [
             // 표 제목 행
@@ -38,6 +39,7 @@ class ManagerSampleHistory extends StatelessWidget {
                 Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('용도'))),
                 Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('기한'))),
                 Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('재고상황'))),
+                Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('전달여부'))),
               ],
             ),
             // 예시 데이터 행
@@ -51,6 +53,7 @@ class ManagerSampleHistory extends StatelessWidget {
                 Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('테스트'))),
                 Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('2024-10-15'))),
                 Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('30개'))),
+                Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('O'))),
               ],
             ),
             TableRow(
@@ -63,6 +66,7 @@ class ManagerSampleHistory extends StatelessWidget {
                 Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('프로토타입'))),
                 Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('2024-10-20'))),
                 Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('30개'))),
+                Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('X'))),
               ],
             ),
             TableRow(
@@ -75,6 +79,7 @@ class ManagerSampleHistory extends StatelessWidget {
                 Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('고객 시연'))),
                 Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('2024-10-25'))),
                 Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('15개'))),
+                Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('O'))),
               ],
             ),
           ],

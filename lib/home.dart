@@ -34,7 +34,7 @@ class Home extends StatelessWidget {
                   title: const Text('HKMC'),
                   onTap: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => Hkmc()));
+                        builder: (context) => Hkmc()));
                   },
                 ),
                 ListTile(
@@ -109,7 +109,7 @@ class Home extends StatelessWidget {
                   title: const Text('샘플 신청 현황'),
                   onTap: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => ManagerSampleHistory()));
+                        builder: (context) => ManagerSampleHistory()));
                   },
                 ),
               ],
@@ -123,27 +123,13 @@ class Home extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const Text('홍길동_팀 이름'),
+              const Text('홍길동_팀 이름 님의'),
               const Text('샘플 요청 현황은 아래와 같습니다'),
               SizedBox(
                 height: 50,
               ),
-              GestureDetector(
-                onTap: (){
-                  Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => SampleHistory()));
-                },
-                child: Container(
-                    child: Text('샘플이력 상세보기', textAlign: TextAlign.center,),
-                decoration: BoxDecoration(
-                 borderRadius: BorderRadius.circular(8.0),
-                border: Border.all(color: Colors.black26)
-                ),),
 
-              ),
-              SizedBox(
-                height: 30,
-              ),
+              // 표 추가
               Container(
                 padding: const EdgeInsets.all(16.0), // 컨테이너 내부 여백 추가
                 decoration: BoxDecoration(
@@ -154,7 +140,71 @@ class Home extends StatelessWidget {
                     width: 2.0, // 테두리 두께
                   ),
                 ),
-                child: const Text('현황 날짜 사양 수량 정리해서 나오게 표로 표시', textAlign: TextAlign.center,),
+                child: Column(
+                  children: [
+                    // 표 제목 행
+                    Table(
+                      border: TableBorder.all(
+                        color: Colors.grey, // 테두리 색상
+                        width: 2.0, // 테두리 두께
+                      ),
+                      children: [
+                        TableRow(
+                          decoration: BoxDecoration(color: Colors.grey.shade200),
+                          children: const [
+                            Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('날짜'))),
+                            Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('버전'))),
+                            Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('사양'))),
+                            Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('spec1'))),
+                            Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('spec2'))),
+                            Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('spec3'))),
+                            Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('신청수량'))),
+                            Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('수령여부'))),
+                          ],
+                        ),
+                        // 예시 데이터 행 추가
+                        TableRow(
+                          children: [
+                            Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('2024-10-08'))),
+                            Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('버전1'))),
+                            Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('사양1'))),
+                            Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('A'))),
+                            Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('B'))),
+                            Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('C'))),
+                            Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('20'))),
+                            Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('X'))),
+                          ],
+                        ),
+
+                        TableRow(
+                          children: [
+                            Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('2024-10-08'))),
+                            Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('버전1'))),
+                            Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('사양2'))),
+                            Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('C'))),
+                            Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('X'))),
+                            Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('A'))),
+                            Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('60'))),
+                            Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('O'))),
+                          ],
+                        ),
+
+                        TableRow(
+                          children: [
+                            Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('2024-10-08'))),
+                            Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('버전1'))),
+                            Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('사양1'))),
+                            Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('A'))),
+                            Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('A'))),
+                            Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('V'))),
+                            Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('60'))),
+                            Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('X'))),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
